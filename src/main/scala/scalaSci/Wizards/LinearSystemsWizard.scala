@@ -72,6 +72,8 @@ def prepareApacheCommonsPanel() = {
 import  org.apache.commons.math3.linear.LUDecomposition 
 
 import  org.apache.commons.math3.linear.Array2DRowRealMatrix
+import  org.apache.commons.math3.linear._
+
 
 var c = 2.3                             
 var a = $$(4.5, 2*c, c, null, 0.34, 0.44, -0.56, null,  0.33, -1.2, 0.45)  // whatever your matrix is

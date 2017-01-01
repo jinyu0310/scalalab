@@ -15,10 +15,10 @@ object ControlInterpreter {
   //  settings.Ybackend.value = "GenBCode"
     settings.Ydelambdafy.value = "inline"
     println("setting experimental")
-  }
-  /*
+  
+  
     if (scalaExec.Interpreter.GlobalValues.compilerOptimizationFlag == true) 
-        settings.optimise.tryToSetFromPropertyValue("true")
+        settings.optimise.tryToSetFromPropertyValue("opt:_")
      else
        settings.optimise.tryToSetFromPropertyValue("false")
 
@@ -28,7 +28,7 @@ object ControlInterpreter {
     
     settings.target.tryToSetColon(scala.List[String](scalaExec.Interpreter.GlobalValues.targetSetting(scalaExec.Interpreter.GlobalValues.currentTargetSelectionIndex)))
    }
-*/
+
 
   
  // if a global flag is true, record and execute a command, else simply execute it
