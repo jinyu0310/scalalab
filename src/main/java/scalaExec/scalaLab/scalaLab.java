@@ -2501,21 +2501,9 @@ public class scalaLab extends JFrame implements WindowListener, ActionListener {
             }
             );
 
-            JMenuItem usefulTipsJMenuItem = new JMenuItem("Useful Tips");
-            usefulTipsJMenuItem.setFont(GlobalValues.uifont);
-            usefulTipsJMenuItem.addActionListener((ActionEvent e) -> {
-                EditorPaneHTMLHelp inPlaceHelpPane = new EditorPaneHTMLHelp("UsefulTips.html");
-                if (GlobalValues.useSystemBrowserForHelp == false) {
-                    inPlaceHelpPane.setSize(GlobalValues.figFrameSizeX, GlobalValues.figFrameSizeY);
-                    inPlaceHelpPane.setLocation(GlobalValues.sizeX / 4, GlobalValues.sizeY / 4);
-                    inPlaceHelpPane.setVisible(true);
-                }
-            }
-            );
 
             helpMenu.add(usefulInputCommandsJMenuItem);
             helpMenu.add(matrixConversionJMenuItem);
-            helpMenu.add(usefulTipsJMenuItem);
             helpMenu.add(JSyntaxCompletionHelpJMenuItem);
             helpMenu.add(ScalaLabResourcesJMenuItem);
             helpMenu.add(helpSwingScalaConsoleItem);
@@ -2541,20 +2529,10 @@ public class scalaLab extends JFrame implements WindowListener, ActionListener {
                 JavaConfigInfo.displayJavaConfigInfo();
             });
 
-            aboutHelpJMenuItem = new JMenuItem("About...");
-            aboutHelpJMenuItem.setFont(GlobalValues.uifont);
-            aboutHelpJMenuItem.addActionListener((ActionEvent e) -> {
-                JPanel aboutJLab = new AboutScalaLab();
-                EffectsDialog aboutDialog = new EffectsDialog(GlobalValues.scalalabMainFrame, aboutJLab, "About scalaLab ", 1);
-                installInLayeredPane(aboutDialog);
-                aboutDialog.setLocation(50, 50);
-                aboutDialog.setVisible(true);
-            });
-
+      
             helpMenu.add(basicHelpJMenuItem);
             helpMenu.add(memoryHelpJMenuItem);
             helpMenu.add(JavaConfigInfoJMenuItem);
-            helpMenu.add(aboutHelpJMenuItem);
             helpMenu.setMnemonic('h');
             mainJMenuBar.add(FileMenu);
             mainJMenuBar.add(editMenu);
