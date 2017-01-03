@@ -3,8 +3,7 @@ package rsyntaxEdit
 
 import scalaExec.Interpreter.GlobalValues
 
-// process the word under mouse cursor position for the JSyntaxPane editor,
-// the behavior depends on whether we are in ScalaSci mode (last execution key stroke is F6),
+// process the word under mouse cursor position for the JSyntaxPane editor
 
 object ProcessWordAtCursorJSyntaxPane {
 
@@ -32,10 +31,15 @@ def processWordAtCursorJSyntaxPane(wd: String) = {
   //    sI.quietRun(execString)  // execute quitely, the required value is assigned to the synthetic variable $$dummy
 
 //        var valueOfId = scalaExec.Interpreter.GlobalValues.globalInterpreter.valueOfTerm("$$dummy").getOrElse("none")
-var valueOfId =      scalaExec.Interpreter.GlobalValues.globalInterpreter.interpret(wordAtCursor)
+
+           if (GlobalValues.lastVariableUnderMouseCursor != wordAtCursor)  {
+             
+             GlobalValues.lastVariableUnderMouseCursor = wordAtCursor;
+             
+        var valueOfId =      scalaExec.Interpreter.GlobalValues.globalInterpreter.interpret(wordAtCursor)
                   
       
-      if (GlobalValues.getValuesForAllRSyntax==true) {
+      if (GlobalValues.getValuesForAllJSyntax==true) {
         
         if (valueOfId != "none")  
           editor.setToolTipText(wordAtCursor+" [ "+ typeOfId+" ]  " +valueOfId)   
@@ -84,6 +88,6 @@ var valueOfId =      scalaExec.Interpreter.GlobalValues.globalInterpreter.interp
         }
 
      
-      
+}
   
 }

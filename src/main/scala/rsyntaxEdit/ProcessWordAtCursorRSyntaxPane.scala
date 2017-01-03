@@ -32,7 +32,13 @@ def processWordAtCursorRSyntaxPane(wd: String) = {
   //    sI.quietRun(execString)  // execute quitely, the required value is assigned to the synthetic variable $$dummy
 
 //        var valueOfId = scalaExec.Interpreter.GlobalValues.globalInterpreter.valueOfTerm("$$dummy").getOrElse("none")
-var valueOfId =      scalaExec.Interpreter.GlobalValues.globalInterpreter.interpret(wordAtCursor)
+
+           if (GlobalValues.lastVariableUnderMouseCursor != wordAtCursor)  {
+             
+             GlobalValues.lastVariableUnderMouseCursor = wordAtCursor;
+     
+        
+        var valueOfId =      scalaExec.Interpreter.GlobalValues.globalInterpreter.interpret(wordAtCursor)
                   
       
       if (GlobalValues.getValuesForAllRSyntax==true) {
@@ -83,6 +89,6 @@ var valueOfId =      scalaExec.Interpreter.GlobalValues.globalInterpreter.interp
     
         }
 
-       
+}
       
   }

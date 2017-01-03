@@ -45,7 +45,7 @@ public class GlobalValues
 {
 
     
-    static public   String  scalalabBuildVersion = "01-Jan-17"; 
+    static public   String  scalalabBuildVersion = "03-Jan-17"; 
     
    
     static public ScalaInterpreterPane globalInterpreterPane;  // the interpreter pane object which is the main interface to the Scala interpreter
@@ -178,6 +178,7 @@ public class GlobalValues
     static  public  boolean mouseMotionListenerForJSyntax = true;
     static  public  MouseMotionAdapter  jsyntaxMouseMotionAdapter;
     static  public  MouseMotionAdapter  rsyntaxMouseMotionAdapter;
+    static  public  String  lastVariableUnderMouseCursor = "";    // in order to avoid redisplaying the same variable
     
 // accessing values for variables of all types vs. the normal behaving ones (i.e. primitive types and scalaSci types)
     static  public  boolean getValuesForAllRSyntax = false;

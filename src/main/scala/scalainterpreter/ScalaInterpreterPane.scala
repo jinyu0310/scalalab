@@ -120,7 +120,7 @@ class ScalaInterpreterPane  extends  JPanel with CustomizableFont {
   var initialText = ""
    if (GlobalValues.startupHelpFlag)
      initialText = """ // Type ScalaLab code here (use `Configuration` menu to control the presentation of this startup text).
-//  Press  F6 (or Ctrl-E) to execute selected text  or current line (within the Event Dispatch Thread - Is more reliable but Swing is frozen until command completes)
+//  Press  F6 (or Ctrl-E, or CTRL-X, or select the right mouse-click popup menu execute option) to execute selected text  or current line (within the Event Dispatch Thread - Is more reliable but Swing is frozen until command completes)
 //  Press Shift-F6     to execute selected text  or current line in non-blocking mode (i.e. not in the Event Dispatch Thread)
 //  Press F5 to clear the output console
 //  Mouse Double Click on an identifier: Displays its value

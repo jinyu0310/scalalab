@@ -52,8 +52,9 @@ object  ComplexArrayPlots {
 
 /*
 var x =  vrand(1024)
-var y = fft(x)
+var y = afft(x)
 
-ComplexArrayPlots.plotApacheCommonsComplexArray(y)
+scalaSci.math.plot.ComplexArrayPlots.plotApacheCommonsComplexArray(y)
+
 */
 
