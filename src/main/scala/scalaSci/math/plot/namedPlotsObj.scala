@@ -34,7 +34,7 @@ else
 }
 
 /*
- var t = inc(0, 0.05, 10)
+ var t = 0::0.05::10
  var x = sin(0.6*t)
  var y = sin(2.6*t)
  figure(1)

@@ -280,12 +280,17 @@ var a = Mat( 2, 4,
     val   dvalues = values.toArray
     var   cpos = 2  // current position in array
     var   sm = new Mat( nrows, ncols)  // create a Mat
-    for (r<-0 until nrows)
-      for (c<-0 until ncols)
+    var r=0; var c=0
+    while (r < nrows) {
+        c = 0
+        while (c < ncols) 
          {
            sm(r, c) = values(cpos)  // copy value
            cpos += 1
+           c += 1
          }
+        r+=1
+       }
 
     sm  // return the constructed matrix
 
@@ -323,9 +328,10 @@ final def   $( values :Any*) = {
      // construct the new Matrix
    var nm = new Mat(rowCnt*nrowsSubm, colCnt*ncolsSubm)
    var cpos = 0
-   for (r<-0 until rowCnt)
-     for (c<-0 until colCnt)
-         {
+   var r = 0; var c = 0
+   while (r < rowCnt)  {
+     c = 0
+     while (c < colCnt)   {
         var cv = values(cpos)
         if (cv == null) cpos+=1
         cv = values(cpos)
@@ -336,25 +342,36 @@ final def   $( values :Any*) = {
               cv match {
             case null => 
             case v: scalaSci.scalaSciMatrix[Any] =>
-            for ( rs <- 0 until nrowsSubm) 
-              for (cs <- 0 until ncolsSubm)
+              var rs = 0; var cs = 0
+              while (rs  < nrowsSubm) {
+                 cs = 0
+                 while (cs < ncolsSubm)  {
                  nm(crow+rs, ccol+cs) = v(rs, cs)
+                 cs += 1
+                 }
+                 rs += 1
+              }
                  
              case _ => 
              }
                  
          cpos += 1  // next element
-         }   
-         nm
-         }
+         c += 1
+     }
+     r += 1
+   }
+   nm
+     
+    }
          else {
 
      // construct the new Matrix
       var nm = new Mat(rowCnt, colCnt)
    var cpos = 0
-   for (r<-0 until rowCnt)
-     for (c<-0 until colCnt)
-         {
+   var  r = 0; var c = 0
+   while (r < rowCnt) {
+     c =  0
+     while (c < colCnt)  {
         var cv = values(cpos)
         if (cv == null) cpos+=1
         cv = values(cpos)
@@ -366,8 +383,10 @@ final def   $( values :Any*) = {
            }
                      
       cpos += 1
+      c += 1
       }
-         
+   r += 1
+   }
      nm                         
      }
     }

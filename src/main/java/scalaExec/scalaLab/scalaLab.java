@@ -212,7 +212,7 @@ public class scalaLab extends JFrame implements WindowListener, ActionListener {
     private void initHelpObjects() {
 
         //  html documentation URLs     
-        JavaHelpStr = "http://java.sun.com/javase/7/docs/api/";
+        JavaHelpStr = "https://docs.oracle.com/javase/8/docs/api/";
         ScalaHelpStr = "http://www.scala-lang.org/docu/files/api/index.html";
 
     }

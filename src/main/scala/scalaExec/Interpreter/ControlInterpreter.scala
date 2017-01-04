@@ -18,7 +18,7 @@ object ControlInterpreter {
   
   
     if (scalaExec.Interpreter.GlobalValues.compilerOptimizationFlag == true) 
-        settings.optimise.tryToSetFromPropertyValue("opt:_")
+        settings.optimise.tryToSetFromPropertyValue("true")
      else
        settings.optimise.tryToSetFromPropertyValue("false")
 
