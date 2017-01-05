@@ -8,25 +8,26 @@ object ControlInterpreter {
 
   //  control optimization and target JVM class options
   def prepareSettings(settings: Settings) = { 
-  
-    settings.Xexperimental.value = true
+    
+     //   settings.Xexperimental.value = true
      //unreachable-code simplify-jumps empty-line-numbers empty-labels compact-locals nullness-tracking closure-elimination inline-project inline-global l:method l:project l:classpath
   
   //  settings.Ybackend.value = "GenBCode"
-    settings.Ydelambdafy.value = "inline"
-    println("setting experimental")
+    //settings.Ydelambdafy.value = "inline"
+ //   println("setting experimental")
   
   
-    if (scalaExec.Interpreter.GlobalValues.compilerOptimizationFlag == true) 
-        settings.optimise.tryToSetFromPropertyValue("true")
-     else
-       settings.optimise.tryToSetFromPropertyValue("false")
+//   if (scalaExec.Interpreter.GlobalValues.compilerOptimizationFlag == true) 
+ //  settings.optimise.value = true
+ //    else
+  //  settings.optimise.value = false
+  
 
     
-     println("Setting Optimization:  "+ settings.optimise.toString)
-     println("Setting Target:  "+scalaExec.Interpreter.GlobalValues.targetSetting(scalaExec.Interpreter.GlobalValues.currentTargetSelectionIndex))
+   //  println("Setting Optimization:  "+ settings.optimise.toString)
+   //  println("Setting Target:  "+scalaExec.Interpreter.GlobalValues.targetSetting(scalaExec.Interpreter.GlobalValues.currentTargetSelectionIndex))
     
-    settings.target.tryToSetColon(scala.List[String](scalaExec.Interpreter.GlobalValues.targetSetting(scalaExec.Interpreter.GlobalValues.currentTargetSelectionIndex)))
+   // settings.target.tryToSetColon(scala.List[String](scalaExec.Interpreter.GlobalValues.targetSetting(scalaExec.Interpreter.GlobalValues.currentTargetSelectionIndex)))
    }
 
 
