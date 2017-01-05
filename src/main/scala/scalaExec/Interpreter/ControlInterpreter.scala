@@ -16,11 +16,12 @@ object ControlInterpreter {
     //settings.Ydelambdafy.value = "inline"
  //   println("setting experimental")
   
+  settings.deprecation.value = false
   
-//   if (scalaExec.Interpreter.GlobalValues.compilerOptimizationFlag == true) 
- //  settings.optimise.value = true
- //    else
-  //  settings.optimise.value = false
+  if (scalaExec.Interpreter.GlobalValues.compilerOptimizationFlag == true) 
+    settings.optimise.value = true
+     else
+    settings.optimise.value = false
   
 
     
