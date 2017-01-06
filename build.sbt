@@ -22,6 +22,7 @@ exportJars := true
 
  
 val classPath = Seq(
+  "./lib/ApacheCommonMaths.jar",
   "./lib/blas.jar",
      "./lib/JASYMCA.jar",
      "./lib/JFreeChart.jar",
