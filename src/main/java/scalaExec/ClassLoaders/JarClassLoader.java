@@ -73,7 +73,7 @@ public class JarClassLoader extends ExtensionClassLoader // implements ScalaClas
                 {   // while jar file has entries unprocessed
                  String nameOfEntry = je.toString();
                  
-          // make sure we have only slashes, i.e. use Unix path conventions
+          // make sure we have only slashes, i.e. use UNIX path conventions
                   String name ='/'+je.getName().replace('\\', '/');
           
                  int strLen = nameOfEntry.length();

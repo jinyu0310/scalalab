@@ -9,6 +9,8 @@ public class JavaUtilities {
 
     public static boolean pathsDetected = false;  // avoid detecting paths multiple times since they do not change for single execution
     
+    // detects and returns the URL of the .jar file where the class with  classname  resides.
+    // of course that .jar should be on the classpath
       static URL  jarPathOfClass(String className) {
         try {
             return Class.forName(className).getProtectionDomain().getCodeSource().getLocation();
@@ -21,7 +23,7 @@ public class JavaUtilities {
       }
 
       
-      
+      // classpath of the Scala interpreter is set by the user
      public static void setByUser(Settings set) { 
          set.classpath().setByUser_$eq(true);
      }
@@ -31,7 +33,9 @@ public class JavaUtilities {
          set.usejavacp();
      }
      
-      static public void detectPaths() {
+     
+     // detect the important .jar libraries for the operation of ScalaLab, in order to place them on the classpath of the Scala Interpreter
+     static public void detectPaths() {
           if (pathsDetected == false) {
               
               
@@ -40,7 +44,7 @@ public class JavaUtilities {
               hostIsUnix = false;  // Windows host
           
           if (hostIsUnix) {   
-    JavaGlobals.jarFilePath = jarPathOfClass("scalaSci.RichDouble2DArray").toString().replace("file:/", "/");
+    JavaGlobals.jarFilePath = jarPathOfClass("scalaSci.RichDouble2DArray").toString().replace("file:/", "/");  
     JavaGlobals.compFile = jarPathOfClass("scala.tools.nsc.ScriptRunner").toString().replace("file:/", "/");
     JavaGlobals.libFile =  jarPathOfClass("scala.io.Source").toString().replace("file:/","/");
     JavaGlobals.reflectFile = jarPathOfClass("scala.reflect.api.Names").toString().replace("file:/","/");

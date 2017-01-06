@@ -182,6 +182,7 @@ def searchNumalEJMLMTJApacheColt(keywords: Array[String]) = {
 	jarFileNamesOfLibs(1) = JavaGlobals.mtjColtSGTFile
 	jarFileNamesOfLibs(2) = JavaGlobals.ejmlFile
 	jarFileNamesOfLibs(3) = JavaGlobals.ApacheCommonsFile
+          
 // now perform the search 
 	searchAllLibs(jarFileNamesOfLibs, keywords)
 	
@@ -193,13 +194,18 @@ def searchToolboxes(keywords: Array[String]) = {
 	
 
 var numToolboxes = scalaExec.Interpreter.GlobalValues.ScalaSciClassPathComponents.size
+ 
 var jarFileNamesOfLibs = new Array[String](numToolboxes)
 
+   var idx =  GlobalValues.fullJarFilePath.lastIndexOf("/")
+   
+var defaultToolboxesFolder = GlobalValues.fullJarFilePath.substring(0, idx).replace("jar:file:", "")
 
 for (tb<-0 until numToolboxes) {
-	var currentToolbox = scalaExec.Interpreter.GlobalValues.ScalaSciClassPathComponents.get(tb)
+	var currentToolbox = defaultToolboxesFolder+"/"+scalaExec.Interpreter.GlobalValues.ScalaSciClassPathComponents.get(tb)
 	
-	jarFileNamesOfLibs(tb) = currentToolbox
+	jarFileNamesOfLibs(tb) =  currentToolbox
+                     
 	
 }
 	
@@ -213,7 +219,7 @@ def searchAllScalaLabLibs(keywords: Array[String]) = {
 	// construct an array of .jar files over which the search will be performed
 	var jarFileNamesOfLibs = new Array[String](4)
 	jarFileNamesOfLibs(0) = JavaGlobals.numalFile
-	jarFileNamesOfLibs(1) = JavaGlobals.mtjColtSGTFile
+      	jarFileNamesOfLibs(1) = JavaGlobals.mtjColtSGTFile
 	jarFileNamesOfLibs(2) = JavaGlobals.ejmlFile
 	jarFileNamesOfLibs(3) = JavaGlobals.ApacheCommonsFile
 
@@ -246,8 +252,7 @@ def searchAllLibs(jarFileNamesOfLibs: Array[String],  keywords: Array[String])  
   var myJarLoader = scalaExec.Interpreter.GlobalValues.globalInterpreter.classLoader
 
   for (jarFileName  <- jarFileNamesOfLibs)   {   // for all library .jar file names
-   //println("scanning:  "+jarFileName)
-	var jis = new JarInputStream(new BufferedInputStream  (new FileInputStream(jarFileName)))
+      var jis = new JarInputStream(new BufferedInputStream  (new FileInputStream(jarFileName)))
 
 	var entryCnt = 0
 	var je = jis.getNextJarEntry()
