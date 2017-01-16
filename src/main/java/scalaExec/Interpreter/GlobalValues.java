@@ -45,7 +45,7 @@ public class GlobalValues
 {
 
     
-    static public   String  scalalabBuildVersion = "06-Jan-2017"; 
+    static public   String  scalalabBuildVersion = "16-Jan-17"; 
     
    
     static public ScalaInterpreterPane globalInterpreterPane;  // the interpreter pane object which is the main interface to the Scala interpreter
@@ -308,8 +308,8 @@ public class GlobalValues
     
     }
 
-    
-    static public String interpreterType() {
+     //  get a string denoting the type of the current interpreter
+  static public String interpreterType() {
         
         switch (interpreterTypeForPane) {
                 case JAMAMat:  return "JAMA ";

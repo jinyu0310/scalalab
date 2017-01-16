@@ -127,8 +127,8 @@ public class JarClassLoader extends ExtensionClassLoader // implements ScalaClas
   
 
   /**
-     * loads the built-in NUMALL library classes from the .jar file
-     * Numerical analysis functions of the NUMALL library are housed at the directory /numal.
+     * loads the built-in NUMAL library classes from the .jar file
+     * Numerical analysis functions of the NUMAL library are housed at the directory /numal.
      * Returns the number of the classes that successfully loaded into the 
      * global loadedClasses table
      **/
