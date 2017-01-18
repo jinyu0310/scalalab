@@ -10,6 +10,7 @@
             <file>file:/home/sterg/NBProjects/ScalaLab/src/main/java/scalalab/JavaGlobals.java</file>
             <file>file:/home/sterg/NBProjects/ScalaLab/src/main/java/scalaExec/Interpreter/GlobalValues.java</file>
             <file>file:/home/sterg/NBProjects/ScalaLab/src/main/java/scalaExec/gui/scalalabConsole.java</file>
+            <file>file:/home/sterg/NBProjects/ScalaLab/src/main/scala/scalaSci/StaticScalaSciGlobal.scala</file>
             <file>file:/home/sterg/NBProjects/ScalaLab/src/main/java/scalaExec/ClassLoaders/ExtensionClassLoader.java</file>
         </group>
     </open-files>
